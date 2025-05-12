@@ -1,0 +1,60 @@
+# See PEP 518 for the spec of this file
+# https://www.python.org/dev/peps/pep-0518/
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name =  "netbox-aci-plugin"
+version = "0.0.11"
+authors = [
+    {name = "Martin Hauser", email = "git@pheus.dev"},
+]
+description = "NetBox plugin for Cisco ACI."
+readme = "README.md"
+license = {file = "LICENSE"}
+
+classifiers=[
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'Natural Language :: English',
+    "Programming Language :: Python :: 3 :: Only",
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+]
+
+requires-python = ">=3.10.0"
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs==1.6.1",
+    "mkdocs-material==9.5.49",
+    "mkdocs-include-markdown-plugin==7.1.2",
+]
+test = [
+    "check-manifest==0.50",
+    "isort==6.0.0",
+    "pre-commit==4.1.0",
+    "pytest==8.3.4",
+    "ruff==0.9.6",
+    "yamllint==1.35.1",
+]
+
+[project.urls]
+Documentation = "https://github.com/pheus/netbox-aci-plugin/blob/main/README.md"
+Source = "https://github.com/pheus/netbox-aci-plugin"
+Tracker = "https://github.com/pheus/netbox-aci-plugin/issues"
+
+[tool.isort]
+line_length = 79
+profile = "black"
+
+[tool.ruff]
+line-length = 79
+# Always generate Python 3.10-compatible code.
+target_version = "py310"
+
+[tool.setuptools.package-data]
+netbox_aci_plugin = ["templates/**"]
