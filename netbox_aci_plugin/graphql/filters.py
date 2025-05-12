@@ -5,7 +5,7 @@
 from typing import Optional
 
 import strawberry_django
-from netbox.graphql.filter_mixins import autotype_decorator, BaseFilterMixin
+from netbox.graphql.filter_mixins import BaseFilterMixin
 
 from .. import models
 from ..filtersets.tenant_app_profiles import (
